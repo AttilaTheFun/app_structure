@@ -1,0 +1,21 @@
+load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
+
+swift_library(
+    name = "application_foundation",
+    srcs = [
+        "ApplicationLifeCycleListener.swift",
+        "ApplicationScope.swift",
+        "BaseApplicationDelegate.swift",
+        "BaseSceneDelegate.swift",
+        "RootScope.swift",
+        "RootScopeBuilder.swift",
+        "RootViewControllerBuilder.swift",
+        "SceneLifeCycleListener.swift",
+        "SceneScope.swift",
+        "SceneScopeBuilder.swift",
+        "Window.swift",
+    ],
+    module_name = "ApplicationFoundation",
+    visibility = ["//visibility:public"],
+    deps = ["//ios/foundations/dependency_foundation"],
+)
