@@ -1,0 +1,22 @@
+# Use Bazelmod
+common --enable_bzlmod
+
+# Bazel Symlink Prefix
+build --symlink_prefix=.bazel/
+
+# macOS Builds
+build --enable_platform_specific_config
+build:macos --apple_crosstool_top=@local_config_apple_cc//:toolchain
+build:macos --crosstool_top=@local_config_apple_cc//:toolchain
+build:macos --host_crosstool_top=@local_config_apple_cc//:toolchain
+
+# iOS Builds
+build:ios_device --apple_platform_type=ios
+build:ios_device --cpu=ios_arm64
+build:ios_simulator --apple_platform_type=ios
+build:ios_simulator --cpu=ios_sim_arm64
+
+# The CNIOBoringSSL library uses C++14 features like 'enable_if_t' macro support.
+# For more details on how to enable this in Bazel:
+# https://stackoverflow.com/questions/40260242/how-to-set-c-standard-version-when-build-with-bazel/43388168#43388168
+build --cxxopt='-std=c++14'

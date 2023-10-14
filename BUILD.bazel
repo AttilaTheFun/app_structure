@@ -1,0 +1,36 @@
+load("@bazel_gazelle//:def.bzl", "gazelle", "gazelle_binary")
+load("@cgrindel_bazel_starlib//bzltidy:defs.bzl", "tidy")
+
+# bazel_gazelle
+
+# Configure bazel_gazelle:
+# gazelle:swift_module_naming_convention pascal_case
+# gazelle:swift_library_tags -
+# gazelle:exclude .bazel
+# gazelle:exclude .build
+
+# The gazelle binary contains the plugins for each language we want to generate.
+gazelle_binary(
+    name = "_gazelle_binary",
+    languages = [
+        "@bazel_gazelle//language/proto",
+        "@bazel_gazelle//language/go",
+        "@bazel_gazelle//language/bazel/visibility",
+        "@bazel_skylib_gazelle_plugin//bzl",
+        "@rules_swift_package_manager//gazelle",
+    ],
+)
+
+gazelle(
+    name = "gazelle",
+    gazelle = ":_gazelle_binary",
+)
+
+# cgrindel_bazel_starlib
+
+tidy(
+    name = "tidy",
+    targets = [
+        ":gazelle",
+    ],
+)
