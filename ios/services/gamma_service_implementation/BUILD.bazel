@@ -1,0 +1,9 @@
+load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
+
+swift_library(
+    name = "gamma_service_implementation",
+    srcs = ["GammaServiceImplementation.swift"],
+    module_name = "GammaServiceImplementation",
+    visibility = ["//visibility:public"],
+    deps = ["//ios/service_interfaces/gamma_service_interface"],
+)

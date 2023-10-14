@@ -1,0 +1,9 @@
+load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
+
+swift_library(
+    name = "beta_service_implementation",
+    srcs = ["BetaServiceImplementation.swift"],
+    module_name = "BetaServiceImplementation",
+    visibility = ["//visibility:public"],
+    deps = ["//ios/service_interfaces/beta_service_interface"],
+)

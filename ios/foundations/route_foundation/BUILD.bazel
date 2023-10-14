@@ -1,0 +1,11 @@
+load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
+
+swift_library(
+    name = "route_foundation",
+    srcs = [
+        "Route.swift",
+        "RouteHandler.swift",
+    ],
+    module_name = "RouteFoundation",
+    visibility = ["//visibility:public"],
+)

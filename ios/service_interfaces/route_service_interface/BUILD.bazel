@@ -1,0 +1,12 @@
+load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
+
+swift_library(
+    name = "route_service_interface",
+    srcs = [
+        "MutableRouteService.swift",
+        "RouteService.swift",
+    ],
+    module_name = "RouteServiceInterface",
+    visibility = ["//visibility:public"],
+    deps = ["//ios/foundations/route_foundation"],
+)

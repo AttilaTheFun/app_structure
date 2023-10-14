@@ -1,8 +1,8 @@
 load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
 
 swift_library(
-    name = "bar_service_interface",
-    srcs = ["BarService.swift"],
-    module_name = "BarServiceInterface",
+    name = "gamma_service_interface",
+    srcs = ["GammaService.swift"],
+    module_name = "GammaServiceInterface",
     visibility = ["//visibility:public"],
 )
