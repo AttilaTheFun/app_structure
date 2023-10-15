@@ -1,0 +1,5 @@
+import ApplicationFoundation
+import ApplicationLifeCycleServiceInterface
+
+extension ExampleApplicationScope: ApplicationLifeCycleListenerProvider {}
+extension ExampleApplicationScope: ApplicationLifeCycleServiceProvider {}

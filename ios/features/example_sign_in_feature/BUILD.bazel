@@ -1,0 +1,16 @@
+load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
+
+swift_library(
+    name = "example_sign_in_feature",
+    srcs = [
+        "ExampleSignInBuilder.swift",
+        "ExampleSignInViewController.swift",
+    ],
+    module_name = "ExampleSignInFeature",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//ios/feature_interfaces/example_sign_in_feature_interface",
+        "//ios/foundations/dependency_foundation",
+        "//ios/service_interfaces/example_authentication_service_interface",
+    ],
+)

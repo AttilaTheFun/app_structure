@@ -1,0 +1,9 @@
+load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
+
+swift_library(
+    name = "application_life_cycle_service",
+    srcs = ["ApplicationLifeCycleServiceImplementation.swift"],
+    module_name = "ApplicationLifeCycleService",
+    visibility = ["//visibility:public"],
+    deps = ["//ios/service_interfaces/application_life_cycle_service_interface"],
+)

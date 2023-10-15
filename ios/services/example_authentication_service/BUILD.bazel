@@ -1,0 +1,9 @@
+load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
+
+swift_library(
+    name = "example_authentication_service",
+    srcs = ["ExampleAuthenticationServiceImplementation.swift"],
+    module_name = "ExampleAuthenticationService",
+    visibility = ["//visibility:public"],
+    deps = ["//ios/service_interfaces/example_authentication_service_interface"],
+)

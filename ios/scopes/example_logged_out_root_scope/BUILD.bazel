@@ -1,0 +1,20 @@
+load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
+
+swift_library(
+    name = "example_logged_out_root_scope",
+    srcs = [
+        "ExampleLoggedOutRootScope.swift",
+        "ExampleLoggedOutRootScope+Builders.swift",
+        "ExampleLoggedOutRootScope+PropagatedProviders.swift",
+        "ExampleLoggedOutRootScope+RootScope.swift",
+        "ExampleLoggedOutRootScopeBuilder.swift",
+    ],
+    module_name = "ExampleLoggedOutRootScope",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//ios/feature_interfaces/example_sign_in_feature_interface",
+        "//ios/features/example_sign_in_feature",
+        "//ios/foundations/application_foundation",
+        "//ios/foundations/dependency_foundation",
+    ],
+)

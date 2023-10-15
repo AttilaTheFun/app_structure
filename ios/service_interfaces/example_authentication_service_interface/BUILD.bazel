@@ -1,0 +1,11 @@
+load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
+
+swift_library(
+    name = "example_authentication_service_interface",
+    srcs = [
+        "ExampleAuthenticationService.swift",
+        "Session.swift",
+    ],
+    module_name = "ExampleAuthenticationServiceInterface",
+    visibility = ["//visibility:public"],
+)

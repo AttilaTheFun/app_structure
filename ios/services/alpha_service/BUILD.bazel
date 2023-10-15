@@ -1,9 +1,9 @@
 load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
 
 swift_library(
-    name = "alpha_service_implementation",
+    name = "alpha_service",
     srcs = ["AlphaServiceImplementation.swift"],
-    module_name = "AlphaServiceImplementation",
+    module_name = "AlphaService",
     visibility = ["//visibility:public"],
     deps = ["//ios/service_interfaces/alpha_service_interface"],
 )

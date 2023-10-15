@@ -1,0 +1,19 @@
+load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
+
+swift_library(
+    name = "example_application_scope",
+    srcs = [
+        "ExampleApplicationScope.swift",
+        "ExampleApplicationScope+Providers.swift",
+        "ExampleApplicationScope+RootScopeBuilderProvider.swift",
+        "ExampleApplicationStateScope.swift",
+    ],
+    module_name = "ExampleApplicationScope",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//ios/foundations/application_foundation",
+        "//ios/foundations/dependency_foundation",
+        "//ios/scopes/example_logged_out_state_scope",
+        "//ios/service_interfaces/application_life_cycle_service_interface",
+    ],
+)
