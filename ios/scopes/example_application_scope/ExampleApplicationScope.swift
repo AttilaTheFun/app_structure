@@ -6,6 +6,10 @@ import DependencyFoundation
 import ExampleSignedOutStateScope
 import ExampleAuthenticationServiceInterface
 import ExampleAuthenticationServiceImplementation
+import SceneLifeCycleServiceInterface
+import SceneLifeCycleServiceImplementation
+import SceneRouteServiceInterface
+import SceneRouteServiceImplementation
 
 public typealias ExampleApplicationDependencies = Void
 
@@ -20,12 +24,19 @@ public final class ExampleApplicationScope: DependencyContainer<ExampleApplicati
 
     public let applicationLifeCycleService: ApplicationLifeCycleService
     public let exampleAuthenticationService: ExampleAuthenticationService
+    public let sceneRouteService: SceneRouteService
+    public let sharedSceneLifeCycleService: SharedSceneLifeCycleService
 
     // MARK: Initialization
 
     public override init(dependencies: ExampleApplicationDependencies) {
+        
+        // Create the dependencies:
         self.applicationLifeCycleService = ApplicationLifeCycleServiceImplementation()
         self.exampleAuthenticationService = ExampleAuthenticationServiceImplementation()
+        self.sceneRouteService = SceneRouteServiceImplementation()
+        self.sharedSceneLifeCycleService = SharedSceneLifeCycleServiceImplementation()
+
         super.init(dependencies: dependencies)
 
         // Create the subject:
