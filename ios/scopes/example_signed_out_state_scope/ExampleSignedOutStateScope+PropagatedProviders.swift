@@ -1,14 +1,14 @@
-// import AuthenticationServiceInterface
+import ExampleAuthenticationServiceInterface
 // import RequestsServiceInterface
-// import SnagScopeFeatureInterface
+import ExampleSignInFeatureInterface
 
 // MARK: App Providers
 
-// extension ExampleSignedOutStateScope: AuthenticationServiceProvider {
-//     public var authenticationService: AuthenticationService {
-//         dependencies.authenticationService
-//     }
-// }
+extension ExampleSignedOutStateScope: ExampleAuthenticationServiceProvider {
+    public var exampleAuthenticationService: ExampleAuthenticationService {
+        dependencies.exampleAuthenticationService
+    }
+}
 
 // extension ExampleSignedOutStateScope: UnauthenticatedRequestsServiceProvider {
 //     public var unauthenticatedRequestsService: UnauthenticatedRequestsService {
@@ -16,8 +16,8 @@
 //     }
 // }
 
-// extension ExampleSignedOutStateScope: SignInCompleterProvider {
-//     public var signInCompleter: SignInCompleter {
-//         dependencies.signInCompleter
-//     }
-// }
+extension ExampleSignedOutStateScope: ExampleSignInCompleterProvider {
+    public var exampleSignInCompleter: ExampleSignInCompleter {
+        dependencies.exampleSignInCompleter
+    }
+}

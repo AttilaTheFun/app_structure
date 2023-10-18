@@ -1,7 +1,7 @@
 import ExampleSignInFeature
 import ExampleSignInFeatureInterface
 
-extension ExampleLoggedOutRootScope {
+extension ExampleSignedOutRootScope {
     var exampleSignInBuilder: ExampleSignInBuilder {
         ExampleSignInBuilder(dependencies: self)
     }

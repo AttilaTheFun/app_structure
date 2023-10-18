@@ -28,6 +28,7 @@ final class ExampleSignInViewController: UIViewController {
         super.viewDidLoad()
 
         // Configure the views:
+        self.view.backgroundColor = .white
         // self.signInButton.setTitle
     }
 }

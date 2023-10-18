@@ -1,15 +1,15 @@
 import ApplicationFoundation
-import ExampleLoggedOutStateScope
+import ExampleSignedOutStateScope
 
 enum ExampleApplicationStateScope {
-    case loggedOut(ExampleLoggedOutStateScope)
+    case signedOut(ExampleSignedOutStateScope)
 }
 
 extension ExampleApplicationStateScope {
     var rootScopeBuilder: RootScopeBuilder {
         switch self {
-        case let .loggedOut(loggedOutStateScope):
-            loggedOutStateScope
+        case let .signedOut(signedOutStateScope):
+            signedOutStateScope
         }
     }
 }

@@ -1,20 +1,17 @@
-import AuthenticationServiceInterface
-import BuildConfigurationServiceInterface
-import ClientConfigurationServiceInterface
+import ExampleAuthenticationServiceInterface
 import DependencyFoundation
-import RequestsServiceInterface
-import SessionsServiceInterface
-import SnagScopeFeatureInterface
+// import RequestsServiceInterface
+// import SessionsServiceInterface
+import ExampleSignInFeatureInterface
 
 // MARK: ExampleSignedOutStateScopeDependencies
 
 public typealias ExampleSignedOutStateScopeDependencies
-    = AuthenticationServiceProvider
-    & BuildConfigurationServiceProvider
-    & ClientConfigurationServiceProvider
-    & SessionsServiceProvider
-    & SignInCompleterProvider
-    & UnauthenticatedRequestsServiceProvider
+    = DependencyProvider
+    & ExampleAuthenticationServiceProvider
+    // & SessionsServiceProvider
+    & ExampleSignInCompleterProvider
+    // & UnauthenticatedRequestsServiceProvider
 
 // MARK: ExampleSignedOutStateScopeBuilder
 

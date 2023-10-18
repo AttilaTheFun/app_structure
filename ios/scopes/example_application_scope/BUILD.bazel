@@ -4,6 +4,8 @@ swift_library(
     name = "example_application_scope",
     srcs = [
         "ExampleApplicationScope.swift",
+        "ExampleApplicationScope+Builders.swift",
+        "ExampleApplicationScope+Completers.swift",
         "ExampleApplicationScope+Providers.swift",
         "ExampleApplicationScope+RootScopeBuilderProvider.swift",
         "ExampleApplicationStateScope.swift",
@@ -11,9 +13,13 @@ swift_library(
     module_name = "ExampleApplicationScope",
     visibility = ["//visibility:public"],
     deps = [
+        "//ios/feature_interfaces/example_sign_in_feature_interface",
         "//ios/foundations/application_foundation",
         "//ios/foundations/dependency_foundation",
-        "//ios/scopes/example_logged_out_state_scope",
+        "//ios/scopes/example_signed_out_state_scope",
         "//ios/service_interfaces/application_life_cycle_service_interface",
+        "//ios/service_interfaces/example_authentication_service_interface",
+        "//ios/services/application_life_cycle_service_implementation",
+        "//ios/services/example_authentication_service_implementation",
     ],
 )

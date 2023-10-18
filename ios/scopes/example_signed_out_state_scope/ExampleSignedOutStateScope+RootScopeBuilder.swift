@@ -1,9 +1,9 @@
 import ApplicationFoundation
-import ExampleSignInFeature
+import ExampleSignedOutRootScope
 
 extension ExampleSignedOutStateScope: RootScopeBuilder {
     public func buildRootScope(sceneScope: SceneScope) -> RootScope {
-        ExampleSignInFeatureBuilder(dependencies: self)
+        ExampleSignedOutRootScopeBuilder(dependencies: self)
             .buildRootScope(sceneScope: sceneScope)
     }
 }

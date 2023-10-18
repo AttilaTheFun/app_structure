@@ -1,20 +1,21 @@
 load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
 
 swift_library(
-    name = "example_signed_out_state_scope",
+    name = "example_signed_out_root_scope",
     srcs = [
-        "ExampleSignedOutStateScope.swift",
-        "ExampleSignedOutStateScope+PropagatedProviders.swift",
-        "ExampleSignedOutStateScope+RootScopeBuilder.swift",
-        "ExampleSignedOutStateScopeScopeBuilder.swift",
+        "ExampleSignedOutRootScope.swift",
+        "ExampleSignedOutRootScope+Builders.swift",
+        "ExampleSignedOutRootScope+PropagatedProviders.swift",
+        "ExampleSignedOutRootScope+RootScope.swift",
+        "ExampleSignedOutRootScopeBuilder.swift",
     ],
-    module_name = "ExampleSignedOutStateScope",
+    module_name = "ExampleSignedOutRootScope",
     visibility = ["//visibility:public"],
     deps = [
         "//ios/feature_interfaces/example_sign_in_feature_interface",
+        "//ios/features/example_sign_in_feature",
         "//ios/foundations/application_foundation",
         "//ios/foundations/dependency_foundation",
-        "//ios/scopes/example_signed_out_root_scope",
         "//ios/service_interfaces/example_authentication_service_interface",
     ],
 )
