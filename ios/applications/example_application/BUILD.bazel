@@ -9,7 +9,8 @@ apple_bundle_version(
 )
 
 ios_application(
-    name = "ExampleApplication",
+    name = "example_application",
+    bundle_name = "ExampleApplication",
     bundle_id = "com.LoganShire.ExampleApplication",
     families = [
         "iphone",
@@ -20,3 +21,19 @@ ios_application(
     minimum_os_version = "16.0",
     deps = ["//ios/applications/example_application/sources"],
 )
+
+# xcodeproj(
+#     name = name + "_project",
+#     build_mode = "bazel",
+#     project_name = pascal_case_name,
+#     tags = ["manual"],
+#     top_level_targets = [
+#         top_level_target(
+#             ":" + name,
+#             target_environments = [
+#                 "device",
+#                 "simulator",
+#             ],
+#         ),
+#     ],
+# )
