@@ -1,9 +1,0 @@
-load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
-
-swift_library(
-    name = "beta_service",
-    srcs = ["BetaServiceImplementation.swift"],
-    module_name = "BetaService",
-    visibility = ["//visibility:public"],
-    deps = ["//ios/service_interfaces/beta_service_interface"],
-)

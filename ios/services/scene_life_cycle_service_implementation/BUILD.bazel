@@ -1,0 +1,16 @@
+load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
+
+swift_library(
+    name = "scene_life_cycle_service_implementation",
+    srcs = [
+        "SceneLifeCycleServiceImplementation.swift",
+        "SharedSceneLifeCycleServiceImplementation.swift",
+    ],
+    module_name = "SceneLifeCycleServiceImplementation",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//ios/foundations/key_foundation",
+        "//ios/foundations/swift_foundation",
+        "//ios/service_interfaces/scene_life_cycle_service_interface",
+    ],
+)

@@ -1,0 +1,20 @@
+load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
+
+swift_library(
+    name = "example_scene_scope",
+    srcs = [
+        "ExampleSceneScope.swift",
+        "ExampleSceneScope+Providers.swift",
+        "ExampleSceneScopeBuilder.swift",
+    ],
+    module_name = "ExampleSceneScope",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//ios/foundations/application_foundation",
+        "//ios/foundations/dependency_foundation",
+        "//ios/service_interfaces/scene_life_cycle_service_interface",
+        "//ios/service_interfaces/scene_route_service_interface",
+        "//ios/services/scene_life_cycle_service_implementation",
+        "//ios/services/scene_route_service_implementation",
+    ],
+)

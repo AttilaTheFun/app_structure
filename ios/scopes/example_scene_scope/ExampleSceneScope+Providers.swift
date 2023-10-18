@@ -1,0 +1,5 @@
+import ApplicationFoundation
+import SceneLifeCycleServiceInterface
+
+extension ExampleSceneScope: SceneLifeCycleListenerProvider {}
+extension ExampleSceneScope: SceneLifeCycleServiceProvider {}

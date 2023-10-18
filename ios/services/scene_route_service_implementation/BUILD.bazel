@@ -1,0 +1,14 @@
+load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
+
+swift_library(
+    name = "scene_route_service_implementation",
+    srcs = ["SceneRouteServiceImplementation.swift"],
+    module_name = "SceneRouteServiceImplementation",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//ios/foundations/key_foundation",
+        "//ios/foundations/swift_foundation",
+        "//ios/service_interfaces/scene_life_cycle_service_interface",
+        "//ios/service_interfaces/scene_route_service_interface",
+    ],
+)
