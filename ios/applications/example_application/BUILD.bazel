@@ -1,0 +1,22 @@
+load("@build_bazel_rules_apple//apple:ios.bzl", "ios_application")
+load("@build_bazel_rules_apple//apple:versioning.bzl", "apple_bundle_version")
+
+apple_bundle_version(
+    name = "_version",
+    short_version_string = "1.0",
+    build_version = "1",
+    tags = ["manual"],
+)
+
+ios_application(
+    name = "ExampleApplication",
+    bundle_id = "com.LoganShire.ExampleApplication",
+    families = [
+        "iphone",
+        "ipad",
+    ],
+    infoplists = [":Info.plist"],
+    version = ":_version",
+    minimum_os_version = "16.0",
+    deps = ["//ios/applications/example_application/sources"],
+)
